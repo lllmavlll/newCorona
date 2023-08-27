@@ -1,0 +1,33 @@
+/* Custom CSS for horizontal scrollable table */
+.OFtable-res {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+  
+  .OFtable {
+    width: 100%;
+    white-space: nowrap; /* Prevent table cells from wrapping to the next line */
+  }
+  
+  /* Optional: If you want to set a specific width for the table columns */
+  .OFtable th,
+  .OFtable td {
+    min-width: 100px; /* Adjust this value as needed */
+    max-width: 1000px;
+  }
+  .rowBtn{
+    min-width: 100px
+  }
+  .absBtn{
+    position: absolute;
+    right: 0;
+  }
+  
+  /* cursor dsable in order form page for item quantity and estimatedweight*/
+  .cursorDisable:hover{
+    cursor:no-drop;
+  }
+  /* cursor ponter for the table in COF view table */
+.collapseRow{
+  cursor: pointer;
+}
