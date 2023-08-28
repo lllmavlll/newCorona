@@ -8,9 +8,9 @@ const CustOrdSchema = mongoose.Schema({
         type: String,
     },
     lineItem: [{
-        OrderNo: String,
+        orderNo: String,
         orderRefNo: String,
-        itemIndex:String,
+        itemIndex: String,
         placedOrderDate: String,
         requiredDate: String,
         customerOrderTouch: String,

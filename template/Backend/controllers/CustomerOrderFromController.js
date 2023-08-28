@@ -231,6 +231,7 @@ module.exports = {
     getSpecificLineItem,
     updateAvailQnty,
     custOrdTrial,
+
     newCustOrdCreation,
     getAllCustOrdByOrders,
     updateSpecificCustOrd,

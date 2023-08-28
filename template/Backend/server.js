@@ -24,7 +24,7 @@ app.use('/customers', custRouter);
 app.use('/iname', iNameRouter);
 app.use('/itemMasters', IMasterRouter);
 app.use('/CustomerOrderForm', CustOrdFormRouter)
-app.use('/GSO', GSORoute)
+app.use('/GSO', GSORoute);
 app.use('/GSI', GSIRoute);
 
 

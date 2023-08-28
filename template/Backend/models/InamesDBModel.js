@@ -3,21 +3,26 @@ const InameSchema = mongoose.Schema({
 
     Category: {
         type: String,
+        required: true
     },
     Group: {
         type: String,
+        required: true
     },
     SubGroup: {
         type: String,
+        required: true
     },
     CoreProductName: {
         type: String,
+        required: true
     },
     ModelNo: {
         type: String,
+        required: true
     },
     Nstone: {
-        type: String,
+        type: Number,
     },
     Size: {
         type: String,
@@ -28,12 +33,11 @@ const InameSchema = mongoose.Schema({
     ScrewType: {
         type: String,
     },
-    SKUNo: {},
-    FinalIname: {
+    SKUNo: {
         type: String
     },
-    image:{
-        type:String
+    FinalIname: {
+        type: String
     }
 }, { timestamps: true });
 

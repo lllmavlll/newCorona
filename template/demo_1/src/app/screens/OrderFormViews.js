@@ -2,6 +2,7 @@ import React, { useEffect, useReducer, useState } from 'react'
 // import {Form} from 'react-bootstrap'
 import './CustomCssFile.css'
 import { useHistory } from "react-router-dom";
+import { set } from 'mongoose';
 
 
 // const initialState ={
@@ -120,9 +121,22 @@ const reRouteViaCheckBox =(orderRefNo,orIndex)=>{
   
  }
 
+
+ const uniqueObjects =[]
+
+//  const uniqueOrderNo = new Set()
+
+//  for( const obj of orderFormData){
+//    if(!uniqueOrderNo.has(obj.orderNo)){
+//      uniqueOrderNo.add(obj.orderNo);
+//      uniqueObjects.push(obj)
+//    }
+//  }
+
+
   useEffect(()=>{
 
-   fetch('http://localhost:4000/CustomerOrderForm/getAllOrders')
+   fetch('http://localhost:4000/CustomerOrderForm/newCustOrdModel/GlobalGet')
    .then(response => response.json())
    .then(data =>
     {console.log(data);
@@ -135,6 +149,9 @@ const reRouteViaCheckBox =(orderRefNo,orIndex)=>{
    .catch(err=> console.log(err))
     // fetchData();
   },[])
+
+
+
 
   return (
     <>
@@ -156,13 +173,14 @@ const reRouteViaCheckBox =(orderRefNo,orIndex)=>{
                     </thead>
                     <tbody style={{position:'relative'}}>
                         {
-                             orderFormData&&orderFormData.jewelrie&&orderFormData.jewelrie.map((result,index) =>{
+                            //  orderFormData&&orderFormData.jewelrie&&orderFormData.jewelrie.map((result,index) =>{
+                              uniqueObjects.map((result,index) =>{
                               return<>
                               {/* <button onClick={()=>{reRouteFunc(result.OrderNo)}} className="btn btn-primary mr-2 absBtn" > Create GSO</button> */}
                               <tr className='collapseRow' onClick={onClickHandler}>
                                 <td>{index+1}</td>
                                 <td>{result.customerName}</td>
-                                <td>{result.OrderNo}</td>
+                                <td>{result.orderNo}</td>
                               </tr>
                               <tr className="collapse">
                                 <td colSpan="6">
@@ -206,7 +224,7 @@ const reRouteViaCheckBox =(orderRefNo,orIndex)=>{
                                     <th>Remarks</th>
                                   </tr>
                                   </thead>
-                                  <tbody>
+                                  {/* <tbody>
                                     {
                                       result.lineItem.map((lineItem,index)=>{
                                         return <tr key={lineItemList.orderRefNo}>
@@ -258,7 +276,7 @@ const reRouteViaCheckBox =(orderRefNo,orIndex)=>{
                                       })
                                     }
                                    
-                                  </tbody>
+                                  </tbody> */}
                                   </table>
                                   </div>
                                 </td>

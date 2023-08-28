@@ -3,8 +3,8 @@ const CustSchema = mongoose.Schema({
     CustomerName: {
         type: String
     },
-    CustomerPhoneNo: {
-        type: Number
+    CustomerId: {
+        type: String
     }
 });
 
